@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예제2</title>
+    <link rel="stylesheet" href="main2.css">
+</head>
+<body>
+    <div class="box" id="box1">
+        입력하세요
+        <button onclick="popDownId('none')">닫기</button>
+    </div>
+    <div class="box" id="box2">
+        입력하세요
+        <button onclick="popDownPw('none')">닫기</button>
+    </div>
+    
+    <button onclick="popDownId('block');">버튼1</button>
+    <button onclick="popDownPw('block');">버튼2</button>
+
+    <script>
+        function popDownId(dis) {
+            document.getElementById('box1').style.display = dis;
+            document.getElementById('box1').innerHTML = "아이디 입력하세요";
+        }
+        function popDownPw(dis) {
+            document.getElementById('box2').style.display = dis;
+            document.getElementById('box2').innerHTML = "비번 입력하세요";
+        }
+    </script>
+</body>
+</html> 

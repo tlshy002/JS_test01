@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <button onclick="popDownId('block');">버튼1</button>
+    <button onclick="popDownPw('block');">버튼2</button>
+    
+    <div class="boxId" id="boxId">
+        아이디 입력하세요
+        <button onclick="popDownId('none')">닫기</button>
+    </div>
+
+    <div class="boxPw" id="boxPw">
+        비번 입력하세요
+        <button onclick="popDownPw('none')">닫기</button>
+    </div>
+    
+
+    <script>
+        function popDownId(dis) {
+            document.getElementById('boxId').style.display = dis;
+        }
+        function popDownPw(dis) {
+            document.getElementById('boxPw').style.display = dis;
+        }
+    </script>
+</body>
+</html> 

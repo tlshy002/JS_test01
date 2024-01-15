@@ -1,0 +1,52 @@
+백업
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <h1 id="hello">안녕하세요</h1>
+    <div class="box" id="box">
+        알림창임
+        <button onclick="popDown()">닫기</button></div>
+        <!-- onclick에 JS코드 작성가능-->
+        <button onclick="popDown();">버튼</button>
+
+    <script>
+        document.getElementById('hello').style.fontSize = '16px';
+        document.getElementById('hello').style.color = 'green';
+
+        function popDown(dis) {
+            document.getElementById('box').style.display = 'block';
+        }
+        function closeBox() {
+            document.getElementById('box').style.display = 'none';
+        }
+    </script>
+</body>
+</html> 
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div id="box">박스<button>닫기</button></div>
+    <button onclick="openBox()">버튼</button>
+    
+    <script>
+        function openBox() {
+            document.getElementById('box').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
