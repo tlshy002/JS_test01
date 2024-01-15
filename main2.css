@@ -1,0 +1,7 @@
+#box1, #box2 {
+    background-color: skyblue;
+    padding: 20px;
+    color: white;
+    border-radius: 5px;
+    display: none;
+  } 
