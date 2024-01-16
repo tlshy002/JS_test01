@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습1</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <script>
+        let age = 23;
+        const place = "인천";
+
+
+        //연 15% 20%인데 2년이니까 퍼센트 2번계산
+        const money1 = 60000;
+        const money2 = 10000;
+
+        function cal(money) {
+            if(money >= 50000) {
+                let rate = money * 0.2;
+                rate = (rate + money) * 0.2;
+                console.log(rate);
+            } else if(money < 50000 || money > 0) {
+                money * 0.15;
+                rate = (rate + money) * 0.15;
+                console.log
+            }
+        }
+        cal(money1);
+        cal(money2);
+
+    </script>
+</body>
+</html> 

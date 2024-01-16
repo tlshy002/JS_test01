@@ -34,12 +34,20 @@
             padding: 100px 20px;
             background-color: antiquewhite;
         }
-        .tog {
-
+        h4 {
+            color: black;
+        }
+        .dark {
+            background-color: black;
+            color: beige;
+        }
+        .white {
+            background-color: white;
+            color: black;
         }
     </style>
   </head>
-  <body>
+  <body class="body">
     <script
         src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
@@ -93,11 +101,20 @@
         document.querySelector('.badge').addEventListener('click', function() {
             count++;
             console.log(count);
-            if(count % 2 == 0) {
-                document.querySelector('.bg-dark').classList.remove('bg-dark');
-            } else {
-                document.querySelector('.badge').classList.add('bg-dark');
-
+            if(count % 2 == 0) { //다크모드
+                document.querySelector('.badge').innerHTML = "Light 😂🔄";
+                document.querySelector('.badge').style.color = "black";
+                document.querySelector('.badge').classList.remove('bg-dark');                
+                document.querySelector('.body').classList.remove('white');
+                document.querySelector('.body').classList.add('dark');
+                
+            } else { //라이트
+                $('.badge').html("Dark 😂🔄");
+                $('.badge').css("color", 'white');
+                $('.badge').addClass('bg-dark');
+                $('.body').removeClass('dark');
+                $('.body').addClass('white');
+                
             }
         });
 
