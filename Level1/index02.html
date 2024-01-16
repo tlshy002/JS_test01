@@ -1,18 +1,28 @@
+<!-- getElementById 사용법과 속성 -->
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>예제2</title>
-    <link rel="stylesheet" href="main2.css">
+    <title>실습2</title>
+    <link rel="stylesheet" type="text/css" href="main02.css">
+    <!-- <style>
+        #box1, #box2 {
+            background-color: skyblue;
+            padding: 20px;
+            color: white;
+            border-radius: 5px;
+            display: none;
+} 
+    </style> -->
 </head>
 <body>
     <div class="box" id="box1">
-        입력하세요
+        <p id="contentId">입력하세요</p>
         <button onclick="popDownId('none')">닫기</button>
     </div>
     <div class="box" id="box2">
-        입력하세요
+        <p id="contentPw">입력하세요</p>
         <button onclick="popDownPw('none')">닫기</button>
     </div>
     
@@ -22,11 +32,11 @@
     <script>
         function popDownId(dis) {
             document.getElementById('box1').style.display = dis;
-            document.getElementById('box1').innerHTML = "아이디 입력하세요";
+            document.getElementById('contentId').innerHTML = "아이디 입력하세요";
         }
         function popDownPw(dis) {
             document.getElementById('box2').style.display = dis;
-            document.getElementById('box2').innerHTML = "비번 입력하세요";
+            document.getElementById('contentPw').innerHTML = "비번 입력하세요";
         }
     </script>
 </body>

@@ -4,4 +4,7 @@
     color: white;
     border-radius: 5px;
     display: none;
-  } 
+} 
+.box {
+    background-color: antiquewhite;
+}
