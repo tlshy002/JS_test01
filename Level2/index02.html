@@ -1,4 +1,6 @@
-<!-- setTimeout함수 사용법 -->>
+<!-- setTimeout함수 사용과 숙제 -->
+<!-- 정규식 -->
+
 
 <!doctype html>
 <html lang="ko">
@@ -8,7 +10,7 @@
     <link rel="stylesheet" href="main03.css?ver=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-    <title>실습2-1</title>
+    <title>실습2-2</title>
     <style>
         .list-group {
             display: none;
@@ -82,69 +84,80 @@
     </div>
 
     <div class="alert alert-danger">
-        5초 이내 구매시 사은품 증정!
+        <span class="time">5</span>초 이내 구매시 사은품 증정!
     </div>
 
             
 
     <script>
+        // 1초마다 5라는 문자를 1씩 감소시키기.
+        // 0이 되면 <div>를 안보이게 처리하기.
+        let count = 5;
+        const timer = setInterval(function() {
+            count = count - 1;
+            console.log("반복");
+            if(count == 4) {
+                $('.time').html(count);
+            } else if(count == 3) {
+                $('.time').html(count);
+            } else if(count == 2) {
+                $('.time').html(count);
+            } else if(count == 1) {
+                $('.time').html(count);
+            } else if(count == 0) {
+                $('.time').html(count);
+            } else {
+                $('.alert').hide();
+                clearInterval(timer);
+            }
+        }, 1000);
 
-        setTimeout(function() {
-            $('.alert').removeClass('alert-danger');
-            $('.alert').html('');
-            // $('.alert').hide(); // 사실 이거 한줄이면 됨
-        }, 5000)
-
-        // 콜백함수 자리에 함수면 다 들어감
-        // 이런 식으로도 사용할 수 있다~~
-        setInterval(함수, 1000);
-        function 함수() {
-            console.log("안녕");
-        }
 
 
-
-
+        // 로그인 버튼 클릭시 + 모달창
         $('.black-bg').hide();
         $('.btnLogin').on('click', function() {
             $('.black-bg').show();
         })
         $('.btn').on('click', function() {
             $('.black-bg').hide();
-        })
+        });       
         // 네비바 list toggle
         document.querySelector('.navbar-toggler').addEventListener('click', function() {
             document.querySelectorAll('.list-group')[0].classList.toggle('show');
-        })
-        
-        
+        }) 
+                    
+        // 공백검사와 이메일 형식검사하기
         $('form').on('submit', function(e) {
-            e.preventDefault();
-            if(document.getElementById('id').value == '') {
+            const input = document.getElementById('id').value;
+            const email = /\S+@\S+\.\S+/.test(input);
+            console.log(email);
+            if(input == '') {
                 alert('아이디입력하셈')
             }
+            if(email) {
+                console.log('이메일임');
+            } else {
+                alert('이메일 형식이 아님')
+                e.preventDefault();
+            }
         });
-
-
-        // 1. 제이쿼리 사용
-        $('form').on('submit', function() {
-            if(document.getElementById('pw').value == '') {
+        
+        // 비번 6자 이상과 대문자 넣기
+        $('form').on('submit', function(e) {
+            const input = document.getElementById('pw').value
+            if(input == '') {
                 alert('비번 입력하셈');
             } else if(document.getElementById('pw').value.length < 6) {
                 alert('6자 이상 입력하셈');
-
+            }
+            if(/[A-Z]/.test(input)) {
+                alert('ㅇㅋ!');
+            } else {
+                e.preventDefault();
+                alert('대문자 넣어주셈')
             }
         })
-
-        // 2. 셀렉터 사용
-        // document.getElementById('pw').addEventListener('click', function() {
-        //     if(document.getElementById('pw').value == '') {
-        //         alert('비번 입력하셈');
-        //     } else if(document.getElementById('pw').value.length < 6) {
-        //         alert('6자 이상 입력하셈');
-
-        //     }
-        // });
 
 
 
