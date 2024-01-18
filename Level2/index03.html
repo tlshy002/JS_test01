@@ -12,30 +12,13 @@
 
     <title>실습2-2</title>
     <style>
+        /*네비바 css*/
         .list-group {
             display: none;
         }    
         .show {
             display: block;
         }   
-        .black-bg {
-            /* display: none; */ 
-            width : 100%;
-            height : 100%;
-            position : fixed;
-            background : rgba(0,0,0,0.5);
-            z-index : 5;
-            padding: 30px;
-        }
-        .white-bg {
-            background: white;
-            border-radius: 5px;
-            padding: 30px;
-        } 
-        .main-bg {
-            padding: 100px 20px;
-            background-color: antiquewhite;
-        }
     </style>
   </head>
   <body class="body">
@@ -87,21 +70,37 @@
         <span class="time">5</span>초 이내 구매시 사은품 증정!
     </div>
 
-    <div class="slide-container">
-        <div class="slide-box">
-            <img src="car1.png">
-        </div>
-        <div class="slide-box">
-            <img src="car2.png">
-        </div>
-        <div class="slide-box">
-            <img src="car3.png">
+    <!-- 캐러셀 -->
+    <div style="overflow: hidden;">
+        <div class="slide-container">
+            <div class="slide-box">
+                <img src="car1.png">
+            </div>
+            <div class="slide-box">
+                <img src="car2.png">
+            </div>
+            <div class="slide-box">
+                <img src="car3.png">
+            </div>
         </div>
     </div>
+    
+    <button class="slide-1">1</button>
+    <button class="slide-2">2</button>
+    <button class="slide-3">3</button>
     
             
 
     <script>
+        // 캐러셀
+        $('.slide-2').on('click', function() {
+            $('.slide-container').css('transform','translateX(-100vw)');
+        });
+        // 캐러셀 JS로만
+        // document.querySelector('.slide-container').style.transform = 'translateX(-100vw)';
+
+
+
         // 1초마다 5라는 문자를 1씩 감소시키기.
         // 0이 되면 <div>를 안보이게 처리하기.
         let count = 5;
@@ -162,10 +161,13 @@
             if(input == '') {
                 alert('비번 입력하셈');
             } else if(document.getElementById('pw').value.length < 6) {
+                e.preventDefault();
                 alert('6자 이상 입력하셈');
+            } else {
+                alert('6자이상ㅇㅋ!')
             }
             if(/[A-Z]/.test(input)) {
-                alert('ㅇㅋ!');
+                alert('대문자ㅇㅋ!');
             } else {
                 e.preventDefault();
                 alert('대문자 넣어주셈')
