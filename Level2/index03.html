@@ -88,18 +88,66 @@
     <button class="slideBtn-1">1</button>
     <button class="slideBtn-2">2</button>
     <button class="slideBtn-3">3</button>
+    <button class="slideBtn-before">이전</button>
+    <button class="slideBtn-next">다음</button>
     
             
 
     <script>
-        
         // 캐러셀
-        // $('.slideBtn-2').on('click', function() {
-        //     $('.slide-container').css('transform','translateX(-100vw)');
-        // });
-        document.querySelector('.slideBtn-2').addEventListener('click', () => {
-            document.querySelector('.slide-container').style.transform = "translateX(-100vw)";
+        $('.slideBtn-1').on('click', function() {
+            $('.slide-container').css('transform','translateX(0vw)');
         });
+        $('.slideBtn-2').on('click', function() {
+            $('.slide-container').css('transform','translateX(-100vw)');
+        });
+        $('.slideBtn-3').on('click', () => {
+            $('.slide-container').css('transform', 'translateX(-200vw)');
+        });
+
+        // 다음버튼
+        let next = 0;
+        $('.slideBtn-next').on('click', () => {
+            if(next == 0) {
+                $('.slide-container').css('transform','translateX(-100vw)');
+                next++;
+            } else if(next == 1) {
+                $('.slide-container').css('transform','translateX(-200vw)');
+                next++
+            }
+            
+        })
+
+
+        document.querySelector('.slideBtn-before').addEventListener('click', () => {
+            if(next == 0) {
+                document.querySelector('.slide-container').style.transform = 'translateX(0vw)';
+                before--;
+                before = Math.min(before, 0);
+            } else if(next == 1) {
+                document.querySelector('.slide-container').style.transform = 'translateX(100vw)';
+
+            }
+            
+        })
+            
+
+
+
+
+
+
+        // 다음버튼
+        // document.querySelector('.slideBtn-next').addEventListener('click', () => {
+        //     next++;
+        //     console.log(next);
+        //     if(next == 1) {
+        //         document.querySelector('.slide-container').style.transform = "translateX(-100vw)";
+        //     } else if(next == 2) {
+        //         document.querySelector('.slide-container').style.transform = "translateX(-200vw)";
+        //     }
+            
+        // });
 
 
 
