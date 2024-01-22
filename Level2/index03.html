@@ -106,49 +106,34 @@
         });
 
         // 다음버튼
-        let next = 0;
-        $('.slideBtn-next').on('click', () => {
-            if(next == 0) {
+        let next = 1;
+        $('.slideBtn-next').on('click', () => {            
+            console.log(next);
+            if(next == 1 || next <= 0) {
                 $('.slide-container').css('transform','translateX(-100vw)');
                 next++;
-            } else if(next == 1) {
+            } else if(next == 2) {
                 $('.slide-container').css('transform','translateX(-200vw)');
-                next++
+                next++;
+                next = Math.min(next, 2);
             }
-            
         })
 
-
-        document.querySelector('.slideBtn-before').addEventListener('click', () => {
-            if(next == 0) {
-                document.querySelector('.slide-container').style.transform = 'translateX(0vw)';
-                before--;
-                before = Math.min(before, 0);
+        // 이전버튼
+        $('.slideBtn-before').on('click', () => {            
+            console.log(next);
+            if(next == 2) {
+                $('.slide-container').css('transform','translateX(-200vw)');
+                next--;
             } else if(next == 1) {
-                document.querySelector('.slide-container').style.transform = 'translateX(100vw)';
-
-            }
-            
+                $('.slide-container').css('transform','translateX(-100vw)');
+                next--;
+            } else if(next == 0) {
+                $('.slide-container').css('transform','translateX(0vw)');
+                next = Math.max(next, 0);
+            }           
         })
-            
-
-
-
-
-
-
-        // 다음버튼
-        // document.querySelector('.slideBtn-next').addEventListener('click', () => {
-        //     next++;
-        //     console.log(next);
-        //     if(next == 1) {
-        //         document.querySelector('.slide-container').style.transform = "translateX(-100vw)";
-        //     } else if(next == 2) {
-        //         document.querySelector('.slide-container').style.transform = "translateX(-200vw)";
-        //     }
-            
-        // });
-
+        
 
 
         // 1초마다 5라는 문자를 1씩 감소시키기.
@@ -156,7 +141,7 @@
         let count = 5;
         const timer = setInterval(function() {
             count = count - 1;
-            console.log("반복");
+            // console.log("반복");
             if(count == 4) {
                 $('.time').html(count);
             } else if(count == 3) {
