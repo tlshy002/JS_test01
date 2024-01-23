@@ -1,0 +1,74 @@
+<!-- 2024.01.22(월) -->>
+
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="main03.css?ver=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>실습2-1</title>
+    <style>
+        
+    </style>
+  </head>
+  <body class="body">
+    <script
+        src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+        crossorigin="anonymous"></script>
+
+        
+            
+
+    <script>
+        // Q1. 함수에 분과 초를 차례로 파라미터로 입력하면 ms단위로 바꿔서 뱉어주는 함수
+        function time(min, sec) {
+            this.min = min * 60 * 1000;
+            this.sec = sec * 1000;
+            return this.min + this.sec;
+        }
+        console.log(time(1,30));
+
+        //답
+        function 함수(a, b){
+        var result = (a * 60 + b) * 1000;
+        return result
+        }
+
+        // Q2. 가격을 파라미터로 입력하면 10% 할인된 가격을 뱉는 함수
+        function dc(price, bool) {
+            if(bool) {
+                let sale1 = price / 10;
+                price = price - sale1;
+                let sale2 = price * 1.5;
+                console.log(sale2);
+                return price - sale2;
+            } else {
+                let sale = price / 10
+                return price - sale;
+            }
+        }
+        console.log(dc(10, true));
+
+        //모르겠음.. 답
+        function 함수(a, b){
+        var result = a * 0.9;
+        if (b == true) {
+            result = result - 1.5;
+        }
+        return result
+        }
+
+
+        
+
+    </script>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" 
+        crossorigin="anonymous"></script>
+    </body>
+</html>
