@@ -118,13 +118,20 @@
         // 현재 위치에서부터 +100px 만큼 스크롤
         // window.scrollBy(0, 100)
 
-        $(window).on('scroll', function() {
-            if($(window).scrollTop() > 100) {
-                console.log(1);
-                $('navbar-brand').addClass('scroll-font-small');
+        // 스크롤이벤트 작동안함
+        // $(window).on('scroll', function() {
+        //     if($(window).scrollTop() > 300) {
+        //         console.log(1);
+        //         $('navbar-brand').css('font-size', '20px');
+        //     }
+        // });
+        //정상작동
+        $(window).on('scroll', function(){
+            if (window.scrollY > 100) {
+            $('.navbar-brand').css('font-size', '20px');
             }
         });
-        
+                
 
         // 캐러셀
         $('.slideBtn-1').on('click', function() {
