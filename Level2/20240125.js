@@ -1,7 +1,7 @@
 // forEach 반복문
 var pants = [28, 30, 32];
 pants.forEach(function(a, i){
-  console.log(a) //반벅문 돌때마다 array하나하나 
+  console.log(a) //반복문 돌때마다 array하나하나 
   console.log(i) //반복문 돌때마다 하나씩 증가하는 정수
 });
 
